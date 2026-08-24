@@ -1,6 +1,6 @@
 package com.senai.Zheiri_Solutions.Repository;
 
-import com.senai.Zheiri_Solutions.Entity.UsuarioEntity;
+import com.senai.Zheiri_Solutions.entitys.UsuarioEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

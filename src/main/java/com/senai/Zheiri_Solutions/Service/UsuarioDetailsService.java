@@ -1,6 +1,7 @@
 package com.senai.Zheiri_Solutions.Service;
 
-import com.senai.Zheiri_Solutions.Entity.UsuarioEntity;
+import com.senai.Zheiri_Solutions.entitys.Status;
+import com.senai.Zheiri_Solutions.entitys.UsuarioEntity;
 import com.senai.Zheiri_Solutions.Repository.UsuarioRepository;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,8 +28,8 @@ public class UsuarioDetailsService implements UserDetailsService {
         return User.builder()
                 .username(usuario.getEmail())
                 .password(usuario.getSenha())
-                .roles(usuario.getPerfil().name())
-                .disabled(!usuario.isAtivo())
+                .roles(usuario.getNivelAcesso().name())
+                .disabled(usuario.getStatus() != Status.ATIVO)
                 .build();
     }
 }
